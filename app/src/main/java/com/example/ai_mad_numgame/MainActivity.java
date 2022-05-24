@@ -152,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
     public int sumOfScore(){
         //Computing the sum of score array, which has the 1 or in each index,depending on correct or incorrect answers
         int sum=0;
+       for(int i=0;i< 3;i++){
+            sum+=score[i];
+        }
+
        // your code here
         return sum;
     }
@@ -172,6 +176,15 @@ public class MainActivity extends AppCompatActivity {
     public String getInterpretation(int [][]dataFrame,double slope){
        //provide interpretation based on your slope analysis
         // Your code here
-        return "Your Interpretation";
+       if(slope>=0 && slope<=0.5){
+            return "Steady";
+
+        }
+        else if(slope>0.5){
+            return "Better";
+
+        }
+        else
+            return "Very Bad";
     }
 }
